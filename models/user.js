@@ -14,6 +14,12 @@ const UserSchema=new schema({
     },
     password:{
         type:String
+    },
+    isAdmin:
+    {
+     type:Boolean,
+     default:false
+
     }
 
 })

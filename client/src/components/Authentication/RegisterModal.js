@@ -40,7 +40,7 @@ console.log(isAuth,"kkkkkkkkk")
     const formdata={name,email,password,lastName}
     dispatch(registeUser(formdata,navigate))
 
- if ( await isAuth ===true){
+ if ( await isAuth === true){
 toggle()
  }
 

@@ -150,10 +150,10 @@ const authLinks = (
             <Nav.Link className={`${classes.nav__link} me-4`}>
               <Link
                style={linkStyle}
-                to="/why"
+                to="/Dashboard"
               
               >
-                Why choose us
+                Dashboard
               </Link>
             </Nav.Link>
             <Nav.Link className={`${classes.nav__link} me-4`}>

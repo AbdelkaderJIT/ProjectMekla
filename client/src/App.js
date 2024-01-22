@@ -11,6 +11,7 @@ import { getAuthUser } from './redux/userAuth/actions';
 import Dashboard from "./components/Pages/Dashboard";
 import Home from "./components/Pages/Home";
 import { Routes,Route } from 'react-router-dom';
+import ManageFood from "./components/Food/ManageFood";
 
 const App = () => {
 
@@ -74,7 +75,7 @@ const App = () => {
   
 </Routes>
   
-
+<ManageFood />
 
     </div>
 

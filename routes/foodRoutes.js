@@ -1,13 +1,15 @@
 const express=require("express")
 const router=express.Router()
 const Food=require("../models/food")
+const isAuth=require("../middleweares/isAuth")
+const isAdmin=require("../middleweares/isAdmin")
 //testt 
 router.get("/",(req,res)=>{
     res.send("helloooooooo")
 })
 
 //add food
-router.post("/addFood",async(req,res)=>{
+router.post("/addFood",isAuth,isAdmin,async(req,res)=>{
     console.log(req.body,"hellooooo")
     const {foodName,imgURL,description,extras}=req.body
     
@@ -21,7 +23,7 @@ router.post("/addFood",async(req,res)=>{
     
 })
 //delete food
-router.delete("/deletefood/:_id",async(req,res)=>{
+router.delete("/deletefood/:_id",isAuth,isAdmin,async(req,res)=>{
     const {_id}=req.params
     const food= await Food.findOneAndDelete({_id})
     res.send({msg:"user deleted",food})
@@ -29,7 +31,7 @@ router.delete("/deletefood/:_id",async(req,res)=>{
 
 //edit food
 
-router.put("/editfood/:_id",async(req,res)=>{
+router.put("/editfood/:_id",isAuth,isAdmin,async(req,res)=>{
     const{_id}=req.params
     const food=await Food.findByIdAndUpdate({_id},{$set:req.body},{new:true})
     res.send({msg:"Food Edited",food})
