@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {useDispatch, useSelector} from "react-redux"
 import {getFood} from "../../redux/food/actions"
+import Table from 'react-bootstrap/Table';
+
 
 function ManageFood() {
 
@@ -10,21 +12,49 @@ function ManageFood() {
     const getfooods=()=>{
         dispatch(getFood());
     }
-    useEffect(getfooods,[])
-  const foodlist=useSelector((state)=>state.food.food.foods)
+    useEffect(()=>{getfooods();
+    console.log("hhhhhhhhhhhhhhhhh");
+    },[])
+
+  const foodlist= useSelector((state)=>state.food.food.foods)
   console.log(foodlist,"kkkkzezqrqerrrrkkkk")
 
 
   return (
 
-<>
-hellloooo
-{
-          foodlist && foodlist.map(function(el, i){
-           <h1>hello</h1>
-           })
+<div style={{margin:"5%"}}>
+  <Button> Add Food</Button>
+<Table striped bordered hover variant="light" >
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Picture</th>
+          <th>Food's name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      {
+
+          foodlist !== undefined && foodlist.map((el, i)=>(
+            <tr key={i}>
+               <td>{i + 1}</td>
+            <td>{el.imgURL && (
+                    <img style={{maxWidth:"100px", maxHeight:"70px"}} src={el.imgURL}   />
+                  )}</td>
+            <td>{el.foodName}</td>
+            <td>{el.description}</td>
+            <td><Button> Modify </Button> <Button> Delete </Button></td>
+    
+          </tr>
+          ))
          }
-</>
+     
+      </tbody>
+    </Table>
+
+</div>
 
   
   );

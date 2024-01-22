@@ -5,8 +5,8 @@ import axios from "axios"
 
 //Display Food
 
-export const getFood=()=>(dispatch)=>{
-    axios.get("http://localhost:5001/api/food/getallfood")
+export const getFood=()=>async (dispatch)=>{
+    await axios.get("http://localhost:5001/api/food/getallfood")
     .then((res)=>dispatch({type:GET_FOOD,payload:res.data}))
     .catch((err)=>console.log(err))
     }
@@ -36,8 +36,8 @@ export const editFood=(idFood, editedFood)=>async(dispatch)=>{
 
 // Delete Food
 
-export const deleteFood=(idFood)=>(dispatch)=>{
-    axios.delete(`http://localhost:5001/api/food/deletefood/${idFood}`)
+export const deleteFood=(idFood)=>async (dispatch)=>{
+    await axios.delete(`http://localhost:5001/api/food/deletefood/${idFood}`)
     .then((res)=>dispatch(getFood()))
     .catch((err)=>console.log(err))
 }
