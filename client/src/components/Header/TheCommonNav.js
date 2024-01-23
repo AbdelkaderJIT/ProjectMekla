@@ -115,6 +115,110 @@ const guestLinks = (
     </>
 );
 
+const adminn=(
+ <Fragment>
+
+<Navbar
+        expand="xl"
+        className={`${classes.navbar} fixed-top`}
+        data-aos="fade-down"
+        data-aos-easing="ease-out"
+        data-aos-duration="2000"
+      >
+        <Navbar.Brand className={classes.navbar_brand}>
+          <Link to="hero" spy={true} smooth={true} offset={-50} duration={500}>
+            <img src={Logo} alt="My logo"></img>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className={classes.toggle}
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className={`${classes.nav__linkgroup} ms-auto`}>
+            <Nav.Link
+              className={`${classes.nav__link} ${classes.firstnav__link} me-4`}
+            >
+              <Link
+                style={linkStyle}
+                to="/"
+               
+              >
+                Home
+              </Link>
+            </Nav.Link>
+            <Nav.Link className={`${classes.nav__link} me-4`}>
+              <Link
+               style={linkStyle}
+                to="/Dashboard"
+              
+              >
+                Dashboard
+              </Link>
+            </Nav.Link>
+            <Nav.Link className={`${classes.nav__link} me-4`}>
+              <Link
+                style={linkStyle}
+                to="/ManageFood"
+                
+              >
+                Food Management
+              </Link>
+            </Nav.Link>
+            <Nav.Link className={`${classes.nav__link} me-4`}>
+              <Link
+                style={userLinkStyle}
+                to="/Dashboard"
+               
+              >
+               {user && `Welcome ${user.name} `}
+              </Link>
+            </Nav.Link>
+            <Nav.Link href="#" className={`${classes.nav__link} me-4`} onClick={handleLogout} >
+            
+                 Logout
+               
+            </Nav.Link>
+           
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+
+
+
+
+
+
+
+
+    
+      <Nav.Link className={`${classes.nav__link} me-4`}>
+      <Link to="/Dashboard">
+        <span className="navbar-text mr-3">
+        <strong>{user && `Welcome ${user.name} `}</strong>
+        </span>
+      </Link>
+    </Nav.Link>
+    
+    <Nav.Link href="#" onClick={handleLogout} >
+
+    <strong className="navbar-text mr-3"> Logout</strong> 
+ 
+    </Nav.Link>
+    
+    
+   
+        <span className="navbar-text mr-3">
+        <Link to="/">
+        <strong>Home</strong>
+        </Link>
+        </span>
+      
+    
+  </Fragment>
+)
+
+
 const authLinks = (
   <Fragment>
 
@@ -227,7 +331,6 @@ const authLinks = (
 
 
 
-
   //Layout and structure of the navbar to be passed to THENAV component
   return (
     <>
@@ -243,10 +346,13 @@ const authLinks = (
         <Navbar.Toggle  />
         <Navbar.Collapse id="basic-navbar-nav" >
           <Nav className="ml-auto" navbar>
-          {user && user ? authLinks: guestLinks}
+
+          {user && user.isAdmin ? adminn : user && !user.isAdmin?authLinks:guestLinks}
+
           </Nav>
+
           </Navbar.Collapse>
-      
+       
     </Navbar>
     </>
   );

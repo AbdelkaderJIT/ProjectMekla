@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import ManageFood from "../Food/ManageFood";
+
 
 function Dashboard() {
 
@@ -11,7 +11,6 @@ function Dashboard() {
       <h1>My SPACE</h1>
       <h1>{user && user.name} { user && user.lastName}</h1>
       <h3>{user && user.email}</h3>
-      <ManageFood />
     </div>
     
   )

@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import {useDispatch, useSelector} from "react-redux"
 import {getFood} from "../../redux/food/actions"
 import Table from 'react-bootstrap/Table';
+import AddFoods from './AddFoods';
 
 
 function ManageFood() {
@@ -23,7 +24,9 @@ function ManageFood() {
   return (
 
 <div style={{margin:"5%"}}>
-  <Button> Add Food</Button>
+  <div style={{marginTop:"100px",marginBottom:"20px",marginLeft:"20px"}}>
+   <AddFoods/>
+   </div>
 <Table striped bordered hover variant="light" >
       <thead>
         <tr>

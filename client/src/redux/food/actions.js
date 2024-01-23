@@ -15,11 +15,19 @@ export const getFood=()=>async (dispatch)=>{
 
 // ADD Food
 
-export const AddFood=(newFood)=>async(dispatch)=>{
-   
-    await axios.post("http://localhost:5001/api/food/addFood",newFood)
-    .then ((res)=> dispatch(getFood()))
-    .catch ((err)=> console.log(err))
+export const AddFoodd=(newFood)=>async(dispatch)=>{
+    const config={
+        headers: {
+            'x-auth': localStorage.getItem('token'),
+          }
+    
+    }
+   try{
+    const res=await axios.post("http://localhost:5001/api/food/addFood",newFood,config)
+    console.log(res,"gggggggggg")
+    dispatch(getFood())
+}
+    catch (err){ console.log(err)}
    
 }
 

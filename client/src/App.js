@@ -11,6 +11,7 @@ import { getAuthUser } from './redux/userAuth/actions';
 import Dashboard from "./components/Pages/Dashboard";
 import Home from "./components/Pages/Home";
 import { Routes,Route } from 'react-router-dom';
+import FoodManagement from "./components/Pages/FoodManagement"
 
 
 const App = () => {
@@ -22,8 +23,9 @@ const App = () => {
   }
 
   useEffect(getAuth,[])
-  const isAuth=useSelector((state)=>state.auth.isAuth)
-
+  const user=useSelector((state)=>state.auth.user)
+  
+  console.log(user,"gggggggggg")
 
 
 
@@ -65,9 +67,10 @@ const App = () => {
 
 <TheCommonNav />
    
-    {isAuth &&
+    {user &&
     <Routes>
       <Route path="/Dashboard" element={<Dashboard/>} />
+      <Route path="/ManageFood" element={<FoodManagement/>} />
       </Routes>
         }
       <Routes>
