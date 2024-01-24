@@ -10,7 +10,7 @@ const HeroThreeContent = (props) => {
 
   //Converting prices to two decimal places
 
-  const price = `₦${props.price.toFixed(2)}`;
+  const price = `Dt ${props.price.toFixed(2)}`;
 
   //END
 
@@ -30,14 +30,14 @@ const HeroThreeContent = (props) => {
   return (
     <div className={classes.dish_content}>
       <div className={classes.dish_image_div}>
-        <img src={props.src} alt="Dish" />
+        <img src={props.src} style={{width:"400px",height:"300px"}} alt="Dish" />
       </div>
       <div className={classes.dish_text_div}>
         <p>{props.name}</p>
       </div>
       <div className={classes.dish_price_div}>
-        <p className="my-auto">{price}</p>
-        <HeroThreeForm onAddToCart={onAddToCartHandler} />
+        <p > {price}</p>
+        {/* <HeroThreeForm onAddToCart={onAddToCartHandler} /> */}
       </div>
     </div>
   );

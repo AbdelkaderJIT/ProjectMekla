@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React ,{useState,useEffect}from 'react'
 import {useDispatch, useSelector} from "react-redux"
 import { AddFoodd } from '../../redux/food/actions'
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -15,33 +15,43 @@ function AddFoods() {
   const[imgURL,setImgURL]=useState("")
   const[description,setDescription]=useState("")
   const[extras,setExtras] = useState([]) 
+  const[extrasN1,setExtrasN1]=useState("")
+  const[extrasN2,setExtrasN2]=useState("")
+  const[extrasN3,setExtrasN3]=useState("") 
+  
+
 
   const toggle=()=>{
     setModal(!modal)
     console.log(modal,"MODAL STATUS")
   }
+  useEffect(() => {
+
+    setExtras([ extrasN1, extrasN2, extrasN3]);
+
+  }, [extras]);
+
 
   const dispatch=useDispatch()
 
 
-
   const handleADDFood= ()=>{
-     
-    const formdata={foodName,imgURL,description,extras}
+
+    const formdata={foodName,imgURL,description,extras:extras}
     dispatch(AddFoodd(formdata))
 
 toggle()
  
   }
 
-  
+
 
   return (
     <div>
 
 
           
-          <Button href="#" onClick={toggle} >
+          <Button href="#" variant="success" onClick={toggle} >
           
      
           <strong className="navbar-text mr-3"> Add Food</strong> 
@@ -77,12 +87,23 @@ toggle()
   <Form.Control type="email" placeholder="Description"  onChange={(event)=>setDescription(event.target.value)} />
   </Form.Group>
 
-  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+
+    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Extras</Form.Label>
-        <Form.Control type="text" placeholder="Extras"  onChange={(event)=>setExtras(event.target.value)} />
+        <Form.Control type="text" placeholder="Extras"  onChange={(event)=>setExtrasN1(event.target.value)} />
       </Form.Group>
 
- 
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Extras</Form.Label>
+        <Form.Control type="text" placeholder="Extras"  onChange={(event)=>setExtrasN2(event.target.value)} />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Extras</Form.Label>
+        <Form.Control type="text" placeholder="Extras"  onChange={(event)=>setExtrasN3(event.target.value)} />
+      </Form.Group>
+
+
   
 
 </Form>   

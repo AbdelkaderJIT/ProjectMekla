@@ -1,14 +1,13 @@
 import React, {useEffect} from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import classes from "./HeroThreeSection.module.css";
+import classes from "../Sections/HeroThreeSection.module.css";
 import HeroThreeContent from "../SectionComponents/HeroThreeContent";
 import {useDispatch, useSelector} from "react-redux"
 import {getFood} from "../../redux/food/actions"
 
 
-
-const HeroThreeSection = () => {
+function Dishes () {
 
 
 
@@ -71,4 +70,4 @@ const foodlist= useSelector((state)=>state.food.food.foods)
   //END
 };
 
-export default HeroThreeSection;
+export default Dishes

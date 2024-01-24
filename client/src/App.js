@@ -12,6 +12,7 @@ import Dashboard from "./components/Pages/Dashboard";
 import Home from "./components/Pages/Home";
 import { Routes,Route } from 'react-router-dom';
 import FoodManagement from "./components/Pages/FoodManagement"
+import Dishes from "./components/Pages/Dishes"
 
 
 const App = () => {
@@ -75,11 +76,12 @@ const App = () => {
         }
       <Routes>
   <Route path="/" element={<Home/>} />
+  <Route path="/Dishes" element={<Dishes/>} />
   
 </Routes>
   
 
-
+<TheFooter />
     </div>
 
   );
@@ -95,6 +97,6 @@ export default App;
       )}
       <TheNav onShowCart={onShowCartHandler} />
       <Sections />
-      <TheFooter />
+      
      
     </CartProvider> */}

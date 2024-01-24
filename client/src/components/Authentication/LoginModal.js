@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React ,{useEffect, useState}from 'react'
 import { loginUser } from '../../redux/userAuth/actions'
 import {useDispatch,useSelector} from "react-redux"
 import { useNavigate } from 'react-router-dom'
@@ -17,6 +17,8 @@ function LoginModal() {
   const[email,setEmail]=useState("")
   const[password,setPassword]=useState("")
 
+  
+
   const toggle=()=>{
     setModal(!modal)
     console.log(modal,"MODAL STATUS")
@@ -24,8 +26,10 @@ function LoginModal() {
 
 
   const isAuth=useSelector((state)=>state.auth.isAuth)
-
   const errors=useSelector((state)=>state.auth.err)
+  
+
+
   const dispatch=useDispatch()
   const navigate=useNavigate()
 
@@ -79,9 +83,9 @@ function LoginModal() {
 
 
         <Modal.Footer>
-          <Button color="primary" onClick={handleLogin}>
+          <Button variant="warning" onClick={handleLogin}>
 Login          </Button>
-          <Button color="secondary" onClick={toggle}>
+          <Button variant="danger" onClick={toggle}>
             Cancel
           </Button>
         </Modal.Footer>

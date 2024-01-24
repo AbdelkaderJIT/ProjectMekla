@@ -5,6 +5,8 @@ import {useDispatch, useSelector} from "react-redux"
 import {getFood} from "../../redux/food/actions"
 import Table from 'react-bootstrap/Table';
 import AddFoods from './AddFoods';
+import ModifyFoods from './ModifyFoods';
+import DeleteFood from './DeleteFood';
 
 
 function ManageFood() {
@@ -18,13 +20,13 @@ function ManageFood() {
     },[])
 
   const foodlist= useSelector((state)=>state.food.food.foods)
-  console.log(foodlist,"kkkkzezqrqerrrrkkkk")
+
 
 
   return (
 
 <div style={{margin:"5%"}}>
-  <div style={{marginTop:"100px",marginBottom:"20px",marginLeft:"20px"}}>
+  <div style={{marginTop:"150px",marginBottom:"20px",marginLeft:"20px"}}>
    <AddFoods/>
    </div>
 <Table striped bordered hover variant="light" >
@@ -48,7 +50,7 @@ function ManageFood() {
                   )}</td>
             <td>{el.foodName}</td>
             <td>{el.description}</td>
-            <td><Button> Modify </Button> <Button> Delete </Button></td>
+            <td><ModifyFoods el={el}/> <DeleteFood el={el}/></td>
     
           </tr>
           ))

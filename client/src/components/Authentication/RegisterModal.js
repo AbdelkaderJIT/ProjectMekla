@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React ,{useState,useEffect}from 'react'
 import { registeUser } from '../../redux/userAuth/actions'
 import {useDispatch, useSelector} from "react-redux"
 import { useNavigate } from 'react-router-dom'
@@ -31,9 +31,12 @@ function RegisterModal() {
 const isAuth=useSelector((state)=>state.auth.isAuth)
 
   const errors=useSelector((state)=>state.auth.err)
+
   
 console.log(errors,"hellllo")
 console.log(isAuth,"kkkkkkkkk")
+
+
 
   const handleRegister=async ()=>{
      
@@ -47,7 +50,6 @@ toggle()
   }
 
   
-
   return (
     <div>
 
@@ -112,10 +114,10 @@ toggle()
         </Modal.Body>
 
         <Modal.Footer>
-          <Button color="primary" onClick={handleRegister}>
+          <Button variant="warning" onClick={handleRegister}>
             register
           </Button>{' '}
-          <Button color="secondary" onClick={toggle}>
+          <Button variant="danger" onClick={toggle}>
             Cancel
           </Button>
         </Modal.Footer>

@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import classes from "./Footer.module.css";
-import Logo from "../../assets/Logo/Logo.svg";
+import Logo from "../../assets/Logo/mekla.png";
 import { Link } from "react-scroll";
 import insta from "../../assets/Icon/instagram.png";
 import twitter from "../../assets/Icon/twitter.png";
@@ -34,19 +34,11 @@ const Footer = () => {
               <div className={classes.content_div}>
                 <p>
                   Solution for easy and flexible getting meals for the
-                  household.You can trust us anywhere through this platform
+                  household. Contact us on +216 55 489 865 to start your order
                 </p>
                 <p>
-                  &copy;2022 Made with <i className="bi bi-heart-fill"></i>{" "}
-                  by&nbsp;
-                  <a
-                    href="https://github.com/Eniola-Codes"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={classes.eniola_codes}
-                  >
-                    EniolaCodes
-                  </a>
+                  2024 all copyrights are reserved Abdelkader Jerbi
+                  
                 </p>
               </div>
             </div>
@@ -66,7 +58,7 @@ const Footer = () => {
             <div className={classes.social}>
               <h3>Social</h3>
               <a
-                href="https://www.instagram.com/code_redex/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -79,7 +71,7 @@ const Footer = () => {
                 </p>
               </a>
               <a
-                href="https://mobile.twitter.com/EniolaCodes/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -92,7 +84,7 @@ const Footer = () => {
                 </p>
               </a>
               <a
-                href="https://www.linkedin.com/in/eni-ola/"
+                href="#"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -108,15 +100,10 @@ const Footer = () => {
           </Col>
 
           <p className={classes.mobile_copy}>
-            &copy;2022 Made with <i className="bi bi-heart-fill"></i> by&nbsp;
-            <a
-              href="https://github.com/Eniola-Codes"
-              target="_blank"
-              rel="noreferrer"
-              className={classes.eniola_codes}
-            >
-              EniolaCodes
-            </a>
+          <p>
+                  2024 all copyrights are reserved Abdelkader Jerbi
+                  
+                </p>
           </p>
         </Row>
       </Container>

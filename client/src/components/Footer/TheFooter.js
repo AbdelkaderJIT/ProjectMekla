@@ -4,7 +4,7 @@ import Footer from "./Footer";
 const TheFooter = () => {
   //Rendering the footer
   return (
-    <footer>
+    <footer style={{marginTop:"100px"}}>
       <Footer />
     </footer>
   );

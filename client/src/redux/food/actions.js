@@ -34,18 +34,37 @@ export const AddFoodd=(newFood)=>async(dispatch)=>{
 // Edit Food
 
 export const editFood=(idFood, editedFood)=>async(dispatch)=>{
+    const config={
+        headers: {
+            'x-auth': localStorage.getItem('token'),
+          }
     
-    await axios.put(`http://localhost:5001/api/food/editfood/${idFood}`,editedFood)
-    .then ((res)=> dispatch(getFood()))
-    .catch ((err)=> console.log(err))
     }
+    try{
+        const res = await axios.put(`http://localhost:5001/api/food/editfood/${idFood}`,editedFood,config)
+        dispatch(getFood())
+    }
+    catch(err){
+        console.log(err)
+    }
+}
 
 
 
 // Delete Food
 
 export const deleteFood=(idFood)=>async (dispatch)=>{
-    await axios.delete(`http://localhost:5001/api/food/deletefood/${idFood}`)
-    .then((res)=>dispatch(getFood()))
-    .catch((err)=>console.log(err))
+    const config={
+        headers: {
+            'x-auth': localStorage.getItem('token'),
+          }
+        }
+          try{
+            const res = await axios.delete(`http://localhost:5001/api/food/deletefood/${idFood}`,config)
+            dispatch(getFood())
+          }
+          catch (err){
+            console.log(err)
+          }
+  
 }

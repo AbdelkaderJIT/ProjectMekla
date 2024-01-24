@@ -12,12 +12,12 @@ const Sections = () => {
   return (
     <main>
       <HeroSection />
-      <HeroTwoSection />
+   {/*    <HeroTwoSection />
       <HeroThreeSection />
       <HeroFourSection />
       <HeroFiveSection />
       <HeroSixSection />
-      <HeroSevenSection />
+      <HeroSevenSection />  */}
     </main>
   );
   //END

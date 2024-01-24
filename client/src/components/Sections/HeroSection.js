@@ -4,7 +4,7 @@ import classes from "./HeroSection.module.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { Link } from "react-scroll";
 import "bootstrap/dist/css/bootstrap.min.css";
-import FoodImage from "../../assets/image/FoodImage.webp";
+import FoodImage from "../../assets/image/maxresdefault.png";
 
 const HeroSection = () => {
   //Rendering the Hero section(Landing page) on the DOM
@@ -25,7 +25,7 @@ const HeroSection = () => {
               </h1>
               <p>
                 Helping you enjoy comfortable and healthy food anywhere and
-                anytime on the go
+                anytime, Contact us on +216 55 489 865 to start your order.
               </p>
 
               <Link
@@ -36,7 +36,7 @@ const HeroSection = () => {
                 offset={-50}
                 duration={500}
               >
-                <TheButton>Order Now</TheButton>
+                
               </Link>
             </div>
           </Col>
@@ -54,30 +54,90 @@ const HeroSection = () => {
             </div>
           </Col>
         </Row>
+      </Container>
+
+
+
+    
+
+      <Container style={{marginTop:"-100px"}}>
         <Row
+          style={{marginLeft:"450px",marginBottom:"50px"}}
           data-aos="fade-up"
           data-aos-easing="ease-out"
           data-aos-duration="700"
+          data-aos-delay="150"
         >
-          <div className={classes.number__properties}>
-            <div>
-              <p className={classes.number__properties__digit}>500+</p>
-              <p className={classes.number__properties__text}>Food partners</p>
+          <Col xs={12}>
+            <div className={classes.header_div}>
+              <h2>Testimonials</h2>
+              <p>This is what our client are saying</p>
             </div>
-            <div className="mx-4">
-              <p className={classes.number__properties__digit}>1k+</p>
-              <p className={classes.number__properties__text}>
-                orders delivered
+          </Col>
+        </Row>
+
+        <Row className={classes.row_content}>
+          <Col
+            style={{borderStyle:"groove",padding:"10px"}}
+            lg={4}
+            data-aos="fade-up"
+            data-aos-easing="ease-out"
+            data-aos-duration="700"
+            data-aos-delay="150"
+          >
+            <div className={`${classes.text_div} px-2`}>
+              <h4 className={classes.header_text}>Fadwa Jerbi</h4>
+              <p className={classes.text_location}>Paris</p>
+              <p className={classes.text_content}>
+                The first time I ordered food from Mekla, I had a diarrehea but then
+                the second time I had a constipation but the food was delecious I have 
+                health issues because of hot choclate at 00:00 am.
               </p>
             </div>
-            <div>
-              <p className={classes.number__properties__digit}>12k+</p>
-              <p className={classes.number__properties__text}>Clients</p>
+          </Col>
+
+          <Col
+          style={{borderStyle:"groove",padding:"10px"}}
+            lg={4}
+            data-aos="fade-up"
+            data-aos-easing="ease-out"
+            data-aos-duration="700"
+            data-aos-delay="150"
+          >
+            <div className={`${classes.text_div} px-2`}>
+              <h4 className={classes.header_text}>Zeineb Sfaxy</h4>
+              <p className={classes.text_location}>tunis state</p>
+              <p className={classes.text_content}>
+                {" "}
+               I ordered nananya and then I ate the nananya and it was very delecious,
+               because nananya from mekla is very good.{" "}
+              </p>
             </div>
-          </div>
+          </Col>
+
+          <Col
+          style={{borderStyle:"groove",padding:"10px"}}
+            lg={4}
+             data-aos="fade-up"
+            data-aos-easing="ease-out"
+            data-aos-duration="700"
+            data-aos-delay="150"
+          >
+            <div className={`${classes.text_div} px-2`}>
+              <h4 className={classes.header_text}>Lilia BelKadhy</h4>
+              <p className={classes.text_location}>Jandouba</p>
+              <p className={classes.text_content}>
+               I ate from Mekla makrouna and it was spicy just how I like it and it was special
+               because nananya lover zeineb showed me the way queen, princhech nananya lover
+               bezbez jerbi. {" "}
+              </p>
+            </div>
+          </Col>
         </Row>
       </Container>
+    
     </section>
+    
   );
   //END
 };
