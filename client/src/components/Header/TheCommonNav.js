@@ -72,20 +72,7 @@ const guestLinks = (
             </Nav.Link>
 
 
-            <Nav.Item>
-            <Nav.Link className={`${classes.nav__link} me-4`}>
-
-            <Link
-                style={linkStyle}
-                to="/Dishes"
-              
-              >
-                Our dishes
-              </Link>
-                
-              
-            </Nav.Link>
-            </Nav.Item>
+         
             <Nav.Item>
             
                <RegisterModal />

@@ -60,7 +60,7 @@ const HeroSection = () => {
 
     
 
-      <Container style={{marginTop:"-100px"}}>
+      <Container style={{marginTop:"-50px"}}>
         <Row
           style={{marginLeft:"450px",marginBottom:"50px"}}
           data-aos="fade-up"
@@ -106,7 +106,7 @@ const HeroSection = () => {
           >
             <div className={`${classes.text_div} px-2`}>
               <h4 className={classes.header_text}>Zeineb Sfaxy</h4>
-              <p className={classes.text_location}>tunis state</p>
+              <p className={classes.text_location}>tunis </p>
               <p className={classes.text_content}>
                 {" "}
                I ordered nananya and then I ate the nananya and it was very delecious,

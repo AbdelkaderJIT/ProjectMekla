@@ -20,8 +20,7 @@ function ManageFood() {
     },[])
 
   const foodlist= useSelector((state)=>state.food.food.foods)
-
-
+console.log(foodlist,"helooooooooooo")
 
   return (
 
@@ -36,6 +35,7 @@ function ManageFood() {
           <th>Picture</th>
           <th>Food's name</th>
           <th>Description</th>
+          <th>Extras</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -50,6 +50,13 @@ function ManageFood() {
                   )}</td>
             <td>{el.foodName}</td>
             <td>{el.description}</td>
+            <td>
+              <ul>
+              {el.extras.map((el)=>(
+              <li>{el}</li>
+            ))}
+            </ul>
+            </td>
             <td><ModifyFoods el={el}/> <DeleteFood el={el}/></td>
     
           </tr>
